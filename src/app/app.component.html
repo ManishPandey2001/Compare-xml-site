@@ -1,0 +1,62 @@
+<div class="container">
+  <h1>XML Compare Tool</h1>
+
+  <div class="editors">
+    <div class="panel">
+      <h2>XML 1</h2>
+      <textarea [(ngModel)]="xml1" rows="18"></textarea>
+    </div>
+
+    <div class="panel">
+      <h2>XML 2</h2>
+      <textarea [(ngModel)]="xml2" rows="18"></textarea>
+    </div>
+  </div>
+
+  <button (click)="compareXml()">Compare XML</button>
+
+  <p class="error" *ngIf="error">{{ error }}</p>
+  <p class="result" *ngIf="result">{{ result }}</p>
+
+  <div class="output" *ngIf="parsed1 || parsed2">
+    <div class="panel">
+      <h2>Normalized JSON 1</h2>
+      <pre>{{ parsed1 }}</pre>
+    </div>
+
+    <div class="panel">
+      <h2>Normalized JSON 2</h2>
+      <pre>{{ parsed2 }}</pre>
+    </div>
+  </div>
+
+  <div class="diff-section" *ngIf="diffLeft.length || diffRight.length">
+    <div class="panel">
+      <h2>Only in Left / Removed</h2>
+      <div
+        *ngFor="let line of diffLeft"
+        [ngClass]="{
+          'removed': line.type === 'removed',
+          'normal': line.type === 'normal'
+        }"
+        class="diff-line"
+      >
+        {{ line.text }}
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Only in Right / Added</h2>
+      <div
+        *ngFor="let line of diffRight"
+        [ngClass]="{
+          'added': line.type === 'added',
+          'normal': line.type === 'normal'
+        }"
+        class="diff-line"
+      >
+        {{ line.text }}
+      </div>
+    </div>
+  </div>
+</div>
