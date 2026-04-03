@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Base64 to Excel Converter</h1>
+
+  <div class="panel">
+    <label for="fileName">File Name</label>
+    <input
+      id="fileName"
+      type="text"
+      [(ngModel)]="fileName"
+      placeholder="converted-file.xlsx"
+    />
+
+    <label for="base64Input">Base64 Input</label>
+    <textarea
+      id="base64Input"
+      [(ngModel)]="base64Input"
+      rows="16"
+      placeholder="Paste Base64 string here..."
+    ></textarea>
+
+    <div class="button-row">
+      <button (click)="downloadExcel()">Download Excel</button>
+      <button class="secondary" (click)="clearAll()">Clear</button>
+    </div>
+
+    <p class="error" *ngIf="error">{{ error }}</p>
+    <p class="success" *ngIf="success">{{ success }}</p>
+  </div>
+</div>

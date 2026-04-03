@@ -1,87 +1,35 @@
-.container {
-  max-width: 1200px;
-  margin: 20px auto;
-  font-family: Arial, sans-serif;
-  padding: 16px;
+.topbar {
+  display: flex;
+  gap: 12px;
+  padding: 16px 24px;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 24px;
+.topbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  transition: 0.3s;
+  font-weight: 500;
 }
 
-.editors,
-.output,
-.diff-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 20px;
+.topbar a:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
-.panel {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 12px;
-  background: #fafafa;
-}
-
-textarea {
-  width: 100%;
-  font-family: Consolas, monospace;
-  font-size: 14px;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-pre {
-  white-space: pre-wrap;
-  word-break: break-word;
-  background: #fff;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #eee;
-  min-height: 200px;
-}
-
-button {
-  margin-top: 20px;
-  padding: 10px 18px;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.result {
-  color: green;
+.topbar a.active {
+  background: white;
+  color: #4f46e5;
   font-weight: bold;
-  margin-top: 12px;
+  font: status-bar;
 }
 
-.error {
-  color: red;
-  font-weight: bold;
-  margin-top: 12px;
-}
-
-.diff-line {
-  white-space: pre-wrap;
-  font-family: Consolas, monospace;
-  padding: 4px 8px;
-  border-radius: 4px;
-  margin-bottom: 2px;
-}
-
-.removed {
-  background-color: #ffe6e6;
-  color: #b30000;
-}
-
-.added {
-  background-color: #e6ffe6;
-  color: #006600;
-}
-
-.normal {
-  background-color: transparent;
-  color: inherit;
+.page-content {
+  padding: 20px;
+  background: #f5f7ff;
+  min-height: 100vh;
 }

@@ -1,0 +1,87 @@
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  padding: 16px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.editors,
+.output,
+.diff-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.panel {
+  border: 1px solid #060404;
+  border-radius: 8px;
+  padding: 12px;
+  background: #95f8a0;
+}
+
+textarea {
+  width: 100%;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  min-height: 200px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 18px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.result {
+  color: green;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.diff-line {
+  white-space: pre-wrap;
+  font-family: Consolas, monospace;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 2px;
+}
+
+.removed {
+  background-color: #ffe6e6;
+  color: #b30000;
+}
+
+.added {
+  background-color: #e6ffe6;
+  color: #006600;
+}
+
+.normal {
+  background-color: transparent;
+  color: inherit;
+}
